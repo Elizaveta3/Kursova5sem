@@ -1,0 +1,20 @@
+.main_courses_teacher {
+    padding: 20px;
+    background-color: #f8f9fc;
+    min-height: 100vh;
+    font-family: "Comforta";
+  }
+  
+  .welcome-text {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .central_courses_teacher {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
