@@ -1,20 +1,43 @@
-.main_courses_teacher {
-    padding: 20px;
-    background-color: #f8f9fc;
+.wrapper{
+    font-family: "Montserrat", sans-serif;
     min-height: 100vh;
-    font-family: "Comforta";
-  }
-  
-  .welcome-text {
-    text-align: center;
-    font-size: 24px;
+    overflow: hidden;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8;
+    scroll-behavior: smooth;
+}
+._container{
+    max-width: 1306px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: content-box;
+}
+/*----------------PAGE------------*/
+.page{
+    flex: 1 1 auto;
+}
+.main-block{
+    padding: 50px 0;
+}
+.main-block__title{
+    font-size: 32px;
+    /*line-height: calc(32 / 26 * 100%  );*/
+}
+.main-block__title:not(:first-child) {
+    margin-top: 50px;
     margin-bottom: 20px;
-  }
-  
-  .central_courses_teacher {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    justify-items: center;
-  }
-  
+}
+.main-block__cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 60px;
+}
+.main-block__card{
+    margin-bottom: 30px;
+}
+.main-block__card:not(:last-child) {
+    margin-right: 50px;
+}

@@ -11,8 +11,9 @@ const authSlice = createSlice({
     initialState,
     reducers:{
         setCredetials: (state, action) => {
+            console.log('Payload in setCredetials:', action.payload); // Лог для перевірки
             state.userInfo = action.payload;
-            localStorage.setItem('userInfo', JSON.stringify(action.payload))
+            localStorage.setItem('userInfo', JSON.stringify(action.payload));
         },
         logout: (state, action) => {
             state.userInfo = null;

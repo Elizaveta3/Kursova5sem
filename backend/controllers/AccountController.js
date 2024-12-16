@@ -69,9 +69,9 @@ export const login = async (req, res) => {
 
         // Генерація токена
         const token = jwt.sign({
-            _id: account._id,
-            role: account.role, // Додаємо роль до токена
-        },
+                _id: account._id,
+                role: account.role, // Додаємо роль до токена
+            },
             'secret123',
             {
                 expiresIn: '30d',
@@ -97,8 +97,8 @@ export const login = async (req, res) => {
 
 export const logout = async (req, res) => {
     res.cookie('jwt', '', {
-      httpOnly: true,
-      expires: new Date(0),
+        httpOnly: true,
+        expires: new Date(0),
     });
     res.status(200).json({ message: 'Logged out successfully' });
-  };
+};

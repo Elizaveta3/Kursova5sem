@@ -3,7 +3,12 @@ import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 
 
-import {AccountController} from './controllers/index.js'
+import {  AccountController,
+    GroupController,
+    CourseController,
+    TeacherController,
+    TaskController,
+    StudentController,} from './controllers/index.js'
 
 dotenv.config();
 
@@ -15,7 +20,12 @@ app.post('/api/users/auth', AccountController.login);
 app.post('/api/users/register', AccountController.register);
 app.post('/api/users/logout', AccountController.logout);
 
+app.get("/api/users/getGroups", GroupController.getGroups);
 
+app.get("/api/users/getTeacher/:id", TeacherController.getTeacherById)
+app.get("/api/users/courses/:accountId/:courseName", CourseController.getCoursesByAccountIdAndName);
+
+app.get("/api/users/getTasks/:courseId", TaskController.getTasksByCourse )
 app.get("/", (req,res) => {
     res.send("Server is ready");
 })

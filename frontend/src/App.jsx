@@ -4,7 +4,7 @@ import {RegisterPage} from './pages/registerPage'
 import EnterPage from './pages/enterPage'
 import {CoursesTeacherPage} from './pages/coursesTeacher'
 import { CourseStudent } from './pages/coursesStudent'
-import { OneCourseTeacher } from './pages/oneCourseTeacher'
+import { TasksTeacher } from './pages/tasksTeacher.jsx'
 import { OneCourseStudent } from './pages/oneCourseStudent'
 import '../src/styles/reset.css'
 import { ToastContainer } from 'react-toastify';
@@ -17,11 +17,12 @@ function App() {
     <>
     <ToastContainer />
     <Routes>
+      <Route path="/" element={<EnterPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/enter" element={<EnterPage />} />
       <Route path="/coursesTeacher" element={<CoursesTeacherPage />} />
       <Route path='/coursesStudent' element={<CourseStudent/>} />
-      <Route path='/oneCourseTeacher' element={<OneCourseTeacher/>}/>
+      <Route path='/tasksTeacher' element={<TasksTeacher/>}/>
       <Route path='/oneCourseStudent' element={<OneCourseStudent/>} />
     </Routes>
     </>
