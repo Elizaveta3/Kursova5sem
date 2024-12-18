@@ -10,6 +10,7 @@ import {  AccountController,
     TaskController,
     StudentController,
     GradeController,
+    StudentAnswerController,
 } from './controllers/index.js'
 
 dotenv.config();
@@ -39,6 +40,12 @@ app.post('/api/users/tasks/:taskId/grades', GradeController.addGrade);
 
 // Отримання всіх оцінок для завдання
 app.get('/api/users/tasks/:taskId/grades', GradeController.getGradesByTask);
+//отримання статусу submission конкретного завдання
+app.get('/api/users/tasks/:taskId/stats', TaskController.getTaskSubmissionStats);
+// StudentAnswer
+// to add StudentAnswer
+app.post("/api/users/addAnswer", StudentAnswerController.addAnswer);
+app.get("/api/users/checkAnswer", StudentAnswerController.getStudentAnswer);
 
 app.get("/", (req,res) => {
     res.send("Server is ready");

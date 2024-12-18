@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import {RegisterPage} from './pages/registerPage'
 import EnterPage from './pages/enterPage'
 import {CoursesTeacherPage} from './pages/coursesTeacher'
-import { CourseStudent } from './pages/coursesStudent'
+import { CoursesStudentPage } from './pages/coursesStudent'
 import { TasksTeacher } from './pages/tasksTeacher.jsx'
 import { TaskTeacher } from './pages/taskTeacher.jsx'
 import { OneCourseStudent } from './pages/oneCourseStudent'
@@ -22,7 +22,7 @@ function App() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/enter" element={<EnterPage />} />
       <Route path="/coursesTeacher" element={<CoursesTeacherPage />} />
-      <Route path='/coursesStudent' element={<CourseStudent/>} />
+      <Route path='/coursesStudent' element={<CoursesStudentPage/>} />
       <Route path='/tasksTeacher' element={<TasksTeacher/>}/>
       <Route path='/taskTeacher' element={<TaskTeacher/>}/>
       <Route path='/oneCourseStudent' element={<OneCourseStudent/>} />

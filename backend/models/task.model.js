@@ -13,21 +13,22 @@ const taskSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
-        student_answer: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'StudentAnswer',
-            default: null,
-        },
-        submission_status: {
+        student_answer: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'StudentAnswer',
+                default: null,
+            }
+        ],
+        submission_status: [{
             type: String,
             required: true,
-            enum: ['submitted', 'not submitted'],
             default: 'not submitted',
-        },
-        assessment_status: {
+        }],
+        max_grade: {
             type: String,
             required: true,
-            default: 'not assessed',
+            default: '1',
         }
     },
     {

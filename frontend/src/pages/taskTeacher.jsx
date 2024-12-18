@@ -4,7 +4,10 @@ import TableGrades from "../components/TableGrades/TableGrades";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
+import { PieChart } from '@mui/x-charts/PieChart';
 import { setSelectedTask } from '../slices/taskSlice';
+import "../styles/taskTeacher.css";
+import "../styles/reset.css";
 
 export const TaskTeacher = () => {
     const navigate = useNavigate();
@@ -60,13 +63,38 @@ export const TaskTeacher = () => {
             <main className="page">
                 <div className="page__main-block main-block">
                     <div className="main-block__container _container">
+                        <div className="containerForPieChart">
+                            {/*<PieChart*/}
+                            {/*    className="custom-pie-chart"*/}
+                            {/*    margin={{top: 50, bottom: 30, left: 0, right: 10}}*/}
+                            {/*    series={[*/}
+                            {/*        {*/}
+                            {/*            arcLabel: (item) => `${item.value}`,*/}
+                            {/*            arcLabelMinAngle: 35,*/}
+                            {/*            arcLabelRadius: '60%',*/}
+                            {/*            data: pieDataFor21,*/}
+                            {/*        },*/}
+                            {/*    ]}*/}
+                            {/*    colors={colors}*/}
+                            {/*    legend={{*/}
+                            {/*        position: {*/}
+                            {/*            vertical: 'top',*/}
+                            {/*            horizontal: 'center',*/}
+                            {/*        },*/}
+                            {/*        direction: 'row', // Розташування елементів легенди в ряд*/}
+                            {/*    }}*/}
+
+
+                            {/*/>*/}
+                            <div className="chart-label">Атестація</div>
+                        </div>
                         <h1 className="main-block__title">Оцінки студентів:</h1>
                         {rows.length > 0 ? (
                             <TableGrades
                                 rows={rows}
                                 columns={[
-                                    { field: 'studentName', headerName: 'Імʼя студента' },
-                                    { field: 'grade', headerName: 'Оцінка' }
+                                    {field: 'studentName', headerName: 'Студент'},
+                                    {field: 'grade', headerName: 'Оцінка', align: 'center'}
                                 ]}
                                 title="Оцінки студентів"
                                 className="table-container"

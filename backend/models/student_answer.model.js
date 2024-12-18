@@ -1,20 +1,21 @@
 import mongoose from 'mongoose';
 
 const studentAnswerSchema = new mongoose.Schema({
-        file: {
-            type: String,
+        student: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Student',
             required: true,
         },
-        group: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Group',
-            required: true
+        status: {
+            type: String,
+            required: true,
+            default: 'done',
         }
     },
     {
         timestamps: true,
     }
 );
-const StudentAnswer = mongoose.model('Student',studentAnswerShema);
+const StudentAnswer = mongoose.model('StudentAnswer', studentAnswerSchema);
 
 export default StudentAnswer;
