@@ -6,7 +6,7 @@ import {CoursesTeacherPage} from './pages/coursesTeacher'
 import { CoursesStudentPage } from './pages/coursesStudent'
 import { TasksTeacher } from './pages/tasksTeacher.jsx'
 import { TaskTeacher } from './pages/taskTeacher.jsx'
-import { OneCourseStudent } from './pages/oneCourseStudent'
+import { TaskStudent } from './pages/TaskStudent.jsx'
 import '../src/styles/reset.css'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,7 +25,7 @@ function App() {
       <Route path='/coursesStudent' element={<CoursesStudentPage/>} />
       <Route path='/tasksTeacher' element={<TasksTeacher/>}/>
       <Route path='/taskTeacher' element={<TaskTeacher/>}/>
-      <Route path='/oneCourseStudent' element={<OneCourseStudent/>} />
+      <Route path='/taskStudent' element={<TaskStudent/>} />
     </Routes>
     </>
   )

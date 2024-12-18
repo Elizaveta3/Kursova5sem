@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSelectedCourse } from "../../slices/courseSlice";
 import { Card, CardActionArea, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material";
@@ -8,11 +8,20 @@ import picCourse from "../../images/picCourse.jpg";
 
 export const CourseCard = ({ course }) => {
     const dispatch = useDispatch();
-    const navigate = useNavigate(); // Розкоментовано
+    const navigate = useNavigate();
+    const currentUser = useSelector((state) => state.auth?.userInfo);
 
     const handleDetailsClick = () => {
         dispatch(setSelectedCourse(course)); // Зберігаємо обраний курс у Redux
-        navigate(`/tasksTeacher`); // Переходимо до сторінки завдань
+
+        // Перевіряємо роль користувача і перенаправляємо на відповідну сторінку
+        if (currentUser?.role === "teacher") {
+            navigate(`/tasksTeacher`);
+        } else if (currentUser?.role === "student") {
+            navigate(`/taskStudent`);
+        } else {
+            console.warn("Unknown role:", currentUser?.role);
+        }
     };
 
     return (
@@ -22,7 +31,7 @@ export const CourseCard = ({ course }) => {
                     <CardMedia
                         component="img"
                         height="140"
-                        image={picCourse} // Заміна на зображення курсу, якщо доступне
+                        image={picCourse}
                         alt="Course image"
                     />
                     <CardContent>
