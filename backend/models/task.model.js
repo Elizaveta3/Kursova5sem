@@ -17,7 +17,7 @@ const taskSchema = new mongoose.Schema({
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'StudentAnswer',
-                default: null,
+                default: 'not answers',
             }
         ],
         submission_status: [{

@@ -6,7 +6,7 @@ import {CoursesTeacherPage} from './pages/coursesTeacher'
 import { CoursesStudentPage } from './pages/coursesStudent'
 import { TasksTeacher } from './pages/tasksTeacher.jsx'
 import { TaskTeacher } from './pages/taskTeacher.jsx'
-import { TaskStudent } from './pages/TaskStudent.jsx'
+import { TaskStudent } from './pages/taskStudent.jsx'
 import '../src/styles/reset.css'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

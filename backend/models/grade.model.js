@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const gradeSchema = new mongoose.Schema({
-    taskId: {
+    studentAnswerId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Task', // Зв'язок з колекцією завдань
+        ref: 'StudentAnswer', // Зв'язок з колекцією StudentAnswer
         required: true,
     },
     studentId: {

@@ -12,6 +12,7 @@ import {  AccountController,
     GradeController,
     StudentAnswerController,
 } from './controllers/index.js'
+import {getGradesByStudentAnswer} from "./controllers/GradeController.js";
 
 dotenv.config();
 
@@ -36,10 +37,11 @@ app.get("/api/users/getTasks/:courseId", TaskController.getTasksByCourse )
 
 //оцінки
 // Додавання оцінки для завдання
-app.post('/api/users/tasks/:taskId/grades', GradeController.addGrade);
-
+app.post('/api/users/tasks/:studentAnswerId/grades', GradeController.addGrade);
+// додати завдання
+app.post("/api/users/addTask/:courseId", TaskController.addTask);
 // Отримання всіх оцінок для завдання
-app.get('/api/users/tasks/:taskId/grades', GradeController.getGradesByTask);
+app.get('/api/users/tasks/:studentAnswerId/grades', GradeController.getGradesByStudentAnswer);
 //отримання статусу submission конкретного завдання
 app.get('/api/users/tasks/:taskId/stats', TaskController.getTaskSubmissionStats);
 // StudentAnswer
