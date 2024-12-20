@@ -12,6 +12,7 @@ import "../styles/reset.css";
 export const TaskTeacher = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const selectedTask = useSelector((state) => state.task.selectedTask);
     const selectedCourse = useSelector((state) => state.course.selectedCourse);
     const [tasks, setTasks] = useState([]); // Стан для завдань
     const [rows, setRows] = useState([]); // Стан для рядків таблиці
@@ -88,6 +89,7 @@ export const TaskTeacher = () => {
                             {/*/>*/}
                             <div className="chart-label">Атестація</div>
                         </div>
+                        <h2>Завдання: {selectedTask.title}</h2>
                         <h1 className="main-block__title">Оцінки студентів:</h1>
                         {rows.length > 0 ? (
                             <TableGrades

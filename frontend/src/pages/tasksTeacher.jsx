@@ -51,6 +51,7 @@ export const TasksTeacher = () => {
             <main className="page">
                 <div className="page__main-block main-block">
                     <div className="main-block__container _container">
+
                         <h1 className="main-block__title">Оберіть завдання:</h1>
 
                         {selectedCourse ? (
