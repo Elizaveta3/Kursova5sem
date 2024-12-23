@@ -1,4 +1,50 @@
+
+.main-block__chart_group{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
 .containerForPieChart{
     width: 332px;
     height: 362px;
+}
+.main-block__boxInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #027BFF;
+    color: white;
+    border-radius: 10px;
+    margin: 150px 5px 0px 5px;
+    padding: 10px 20px;
+    width: 357px;
+    height: 110px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.main-block__text{
+    padding-top: 15px;
+}
+.main-block__number {
+    font-size: 64px;
+}
+
+.main-block__caption {
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.main-block__iconboxInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.containerForBarChart{
+    width: 370px;
+    height: 300px;
+}
+.custom-pie-chart{
+    width: 370px;
+    height: 300px;
 }

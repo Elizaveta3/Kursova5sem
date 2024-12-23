@@ -83,6 +83,31 @@ export const getStudentAnswer = async (req, res) => {
     }
 };
 
+export const getAssessedTaskStats = async (req, res) => {
+    try {
+        const taskId = req.params.taskId;
+
+        // Знайти завдання за його ID
+        const task = await Task.findById(taskId).populate('student_answer'); // Популяція для отримання відповідей студентів
+        if (!task) {
+            return res.status(404).json({ message: 'Task not found' });
+        }
+
+        // Підрахувати кількість відповідей з статусом 'assessed' для цього завдання
+        const assessedCount = task.student_answer.filter(answer => answer.assessment_status === 'assessed').length;
+
+        // Отримуємо загальну кількість відповідей
+        const totalCount = task.student_answer.length;
+
+        // Повертаємо кількість оцінених відповідей та загальну кількість відповідей
+        res.json({ assessedCount, totalCount });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+
 
 
 

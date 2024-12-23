@@ -12,6 +12,8 @@ import {  AccountController,
     GradeController,
     StudentAnswerController,
 } from './controllers/index.js'
+import {getGradeForStudentAnswer, getGradesForTask} from "./controllers/GradeController.js";
+
 
 
 
@@ -44,12 +46,18 @@ app.post("/api/users/addTask/:courseId", TaskController.addTask);
 // Отримання всіх оцінок для завдання
 app.get('/api/users/tasks/:taskId/grades', GradeController.getStudentAnswersWithGrades);
 
+app.get('/api/users/grades/task/:taskId/student/:studentId', GradeController.getGradeForStudentAnswer);
+//get grades
+app.get('/api/users/tasks/:taskId/gradesTask', GradeController.getGradesForTask);
+
 //отримання статусу submission конкретного завдання
 app.get('/api/users/tasks/:taskId/stats', TaskController.getTaskSubmissionStats);
 // StudentAnswer
 // to add StudentAnswer
 app.post("/api/users/addAnswer", StudentAnswerController.addAnswer);
 app.get("/api/users/checkAnswer", StudentAnswerController.getStudentAnswer);
+// get AssessmentStats
+app.get('/api/users/tasks/:taskId/assessment-stats', StudentAnswerController.getAssessedTaskStats);
 
 app.get("/", (req,res) => {
     res.send("Server is ready");

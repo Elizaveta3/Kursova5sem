@@ -13,7 +13,7 @@ import {
   Paper,
   Avatar,
 } from "@mui/material";
-import logo from "../images/LOGO.png";
+import logo from "../images/logo.svg";
 
 export default function EnterPage() {
   const [email, setEmail] = useState("");
@@ -62,11 +62,11 @@ export default function EnterPage() {
           padding: 4,
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <a href="/" className="header_logo_link">
-            <img src={logo} alt="logo" className="header_logo_pic" />
-          </a>
-        </Avatar>
+        {/*<Avatar sx={{ m: 1,  }}>*/}
+        {/*  <a href="/" className="header_logo_link">*/}
+        {/*    <img src={logo} alt="logo" className="header_logo_pic" />*/}
+        {/*  </a>*/}
+        {/*</Avatar>*/}
         <Typography component="h1" variant="h5">
           Вхід
         </Typography>
